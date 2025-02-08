@@ -1,0 +1,432 @@
+.main-col {
+    width: 975px;
+    margin: 100px auto;
+}
+h1{
+    color: #F2F3F5;
+    padding-top: 50px;
+    text-align: center;
+}
+h2{ color: #F2F3F5;  margin-bottom: 20px;    font-weight: lighter;}
+
+/* ----------------------------- Chatbot ----------------------------- */ 
+
+
+/* Chat container styles */
+#chat-container {
+    max-width: 100%;
+    margin: 100px auto;
+}
+
+/* Chat box where messages will appear */
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chat-con{
+    position: relative;
+    background-color: #1E1F23;
+    padding: 5px 20px;
+    border: 1px solid #555;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.message .text {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border-radius: 16px;
+    word-wrap: break-word;
+}
+
+
+/* Styling for each message in the chat */
+#chat-box > div {
+    padding: 8px 12px;
+    border-radius: 16px;
+    word-wrap: break-word;
+}
+
+/* Styling for user messages */
+#chat-box > div.user {
+    color: #F2F3F5;
+}
+
+/* Styling for bot responses */
+#chat-box > div.bot {
+    align-self: flex-start;
+    color: #F2F3F5;
+}
+
+/* Input box styling */
+#chat-input {
+    width: calc(100% - 48px);
+    border: none;
+    outline: none;
+    color: #F2F3F5;
+    background-color: #1E1F23;
+    font-size: 16px;
+    padding: 15px;
+}
+.chat-btn:disabled {
+    background-color: #555;  /* Darker background for disabled state */
+    cursor: not-allowed;  /* Change cursor to indicate it's not clickable */
+    opacity: 0.6;  /* Make the button look faded */
+}
+/* Button styling */
+.chat-btn {
+    width: 35px;
+    height: 35px;
+    background-color: #F2F3F5;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.3s;
+    transform: translate3d(-10px, -12px, 0);
+}
+
+
+
+/* Arrow Icon */
+.arrow-icon {
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid white;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    background: #F2F3F5;
+    display: inline-block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: animloader 1s ease-in infinite;
+  }
+  
+  @keyframes animloader {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  } 
+
+/* ----------------------------- Documents ----------------------------- */ 
+
+.doc-con {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px -10px; /* Adjust margin to handle space between cards */
+}
+
+.doc-card {
+    flex: 0 0 calc(33.333% - 20px); /* Adjust this to ensure three cards per line */
+    margin: 10px; /* Provides space between cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #2C2D31; /* Optional: adds background color to cards */
+    border-radius: 15px; /* Rounds the corners of the cards */
+}
+
+.doc-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ensures the image covers the designated area without distortion */
+    border-radius: 15px 15px 0 0;
+}
+
+.doc-card h3 {
+    color: #E1E2E7;
+}
+
+.doc-card button {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #5865F3;
+    transition-duration: 0.3s;
+    color: #F2F3F5;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.doc-card button:hover {
+    background-color: #414dc8;
+}
+.doc-card h5{
+    color: #B6B9C0;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.tools-con {
+    padding: 10px;
+}
+
+.tools-con strong {
+    color: #333;
+}
+
+.category {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.category strong {
+    color: #F2F3F5;
+    display: block;
+    background-color: #393A3F;
+    padding: 10px 15px;
+    transition-duration: 0.3s;
+    font-size: 14px;
+}
+
+.category strong:hover{ background-color: #323338;}
+
+.tools-col {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #1E1F23;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;  
+    display: block;
+}
+
+.tools-col.open {
+    max-height: 1000px;  
+    transition: max-height 0.5s ease-in-out; 
+}
+
+.tool-des{
+    color: #B6B9C0;
+}
+
+.tools-col li {
+    padding: 5px 15px;
+    border-bottom: solid 2px #2C2D31;
+}
+
+.tools-col li a {
+    color: #969EF1;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+.tools-col li a:hover {
+    color: #16DB93;
+}
+
+
+/* ----------------------------- Books ----------------------------- */ 
+
+.books-con {
+    margin-top: 100px;
+    padding: 30px 5%;
+    background-color: #2C2D31;
+    border-radius: 15px;
+}
+
+.books-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px 20px;
+}
+
+.book-card {
+    flex: 0 0 calc((100% - 4 * 20px) / 5);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-img { width: 100%;    object-fit: cover;  border-radius: 5px; transition: opacity 0.3s ease-in-out;   }
+.book-card a:hover .book-img {  opacity: 0.7;   cursor: pointer;    }
+
+.book-info {
+    text-align: left;
+    width: 100%;
+}
+
+.book-title {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #E1E2E7;
+}
+
+.book-author {
+    font-size: 14px;
+    color: #83838D;
+    margin-top: 0px;
+}
+
+
+/* ----------------------------- Community ----------------------------- */ 
+.discord-content{
+    margin-top: -50px;
+}
+.discord-des{   padding-left:67px;}
+.comunity-con{
+    display: flex;
+    align-items: center; /* Vertically center the contents */
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 30px 5%;
+    background-color: #2C2D31;
+    border-radius: 15px;
+}
+.comu-icon{
+    vertical-align: middle; /* Aligns the image vertically with the text */
+    margin-right: 10px; /* Adds some space between the icon and the text */
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+.community-image {
+    max-width: 400px; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+.dis-button{
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-weight: bold;
+    color: #F2F3F5;
+    background-color: #5865F3;
+    border-radius: 15px;
+    border: none;
+    display: inline-block;
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s;
+}
+.dis-button:hover{
+    cursor: pointer;
+    background-color: #414dc8;
+}
+/* ----------------------------- Socials ----------------------------- */ 
+.socials-con {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 5%; /* Space between columns */
+    margin-top: 100px;
+}
+
+.social-channel {
+    position: relative;
+    text-align: center; /* Center-align the content */
+}
+
+.social-icon {
+    width: 80px; /* Adjust based on your design needs */
+    position: absolute;
+    left: 50%; /* Center horizontally */
+    transform: translate3d(-50%, 10px, 0px);
+    z-index: 10; /* Above the screenshot */
+}
+
+.social-screenshot {
+    width: 100%; /* Full width of the column */
+    display: block; /* Remove any extra space below the image */
+    border-radius: 20px; /* Optional: rounded corners for aesthetics */
+    margin-top: 50px; /* Make space for the overlaying icon */
+    transition-duration: 0.3s;
+    box-shadow: 0px 5px 15px #f2f3f51a;
+}
+.social-screenshot:hover{   filter: brightness(70%);   cursor: pointer;}
+.social-channel a {
+    display: inline-block; /* Needed to apply dimensions and centering */
+    width: 100%; /* Ensure the link area matches the screenshot */
+}
+
+.social-channel p {
+    margin-top: 10px; /* Space between the screenshot and the description */
+    color: #B6B9C0;
+    text-align: left;
+    font-size: 12px;
+}
+
+/* ----------------------------- Featured tools ----------------------------- */ 
+
+
+
+
+
+
+@media (max-width: 975px) {
+    .main-col {
+        width: 90%;
+    }
+    .community-image{   display: none;}
+    .doc-card button{   width: 100%;}
+    .tools-con{ padding: 0px;}
+    .discord-content {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 750px) {
+    .doc-card h3{   font-size: 15px;}
+    .category strong{   font-size: 12px;}
+    .book-card {    flex: 0 0 calc((100% - 4* 20px) / 4);}
+    .social-icon{   width: 60px;        transform: translate3d(-50%, 20px, 0px);}
+}
+
+@media (max-width: 600px) {
+    .doc-card{      flex: 0 0 calc(50% - 20px);}
+    h1{ font-size: 26px;}
+    .book-card {    flex: 0 0 calc((100% - 4* 20px) / 3);}
+    .tools-col li{  font-size: 12px;}
+}
+
+@media (max-width: 450px) {
+    .category strong {
+        font-size: 9px;
+    }
+    .doc-card button{
+        font-size: 10px;
+        margin: 25px 0;
+    }
+    .social-icon{   width: 40px;        transform: translate3d(-50%, 30px, 0px);}
+    .tools-col li{  font-size: 10px;}
+    .message .text{ font-size: 12px;}
+    #chat-input{    font-size: 12px;}
+    .chat-btn{  transform: translate3d(-10px, -10px, 0);}
+    .dis-icon{  
+        display: block;
+        margin-bottom: 10px;
+    }
+    .discord-des{   padding-left:0px;}
+}

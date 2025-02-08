@@ -1,0 +1,484 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: 'Open Sans', 'Lato', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #1E1F23;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+  }
+  
+  /* ------------------- Style for General header ------------------- */
+
+  .index-12{
+    z-index: 12 !important;
+  }
+
+  #main-navigation {
+    z-index: 13;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    box-shadow: 0px 3px 30px 20px #00000052;
+  }
+  #main-navigation a{
+    text-decoration: none;
+  }
+  #dalaran-logo{
+    margin: 5px 10px 0 10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  #mobile-menu-icon {
+    display: none;
+  }
+  
+
+/* 
+  #main-navigation nav {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 300px;
+    height: 55px;
+    border-radius: 1.2rem;
+    border: 1px solid #83838D;
+    padding: 0.6rem 0 0.1rem 0;
+  }
+  .nav-btn-a{
+    position:relative;
+    flex-grow: 1;
+    width: 30px;
+    height: 30px;
+  }
+  .nav-icon {
+    fill: #E1E2E7;
+    padding: 0.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0 1.5rem;
+    cursor: pointer;
+  }
+  .nav-btn-a:hover .menu-btn-bg{
+    opacity: 100%;
+  }
+  .nav-btn-a:hover .btn-hover{
+    opacity: 100%;
+    transform: translate(37px, 0px);
+  }
+  .menu-btn-bg{
+    transform: translate(25px, -39px);
+    display: none;
+    opacity: 0%;
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    background: linear-gradient(to right bottom, #7078f3, #6970f3, #6269f3, #5b61f3,
+     #5460f1, #4f5cee, #4a58ea, #4554e6, #4151dd, #3d4dd4, #394acb, #3546c2);
+    border-radius: 13px;
+    box-shadow: 0px 3px 20px #5865F367;
+    z-index: -1;
+    transition-duration: 0.4s;
+  }
+  .btn-hover {
+    transition-duration: 0.4s;
+    display: none;
+    opacity: 0%;
+    background-color: #5865F3;
+    border-radius: 100%;
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    transform: translate(37px, 10px);
+  }
+
+  .nav-label {
+    position: absolute;
+    transition: opacity 0.4s, visibility 0.4s; 
+    bottom: -50px; 
+    left: 55%; 
+    transform: translateX(-50%); 
+    visibility: hidden; 
+    opacity: 0; 
+    color: #83838D; 
+    font-size: 12px; 
+}
+
+.nav-btn-a:hover .nav-label {
+    visibility: visible; 
+    opacity: 1; 
+}
+
+*/
+
+#main-navigation nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-btn-a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+/* Underline effect on hover */
+.nav-btn-a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s;
+}
+
+.nav-btn-a:hover {
+  color: #ddd;
+}
+
+.nav-btn-a:hover::after {
+  width: 100%;
+}
+
+
+
+  #profile-icon{
+    fill: #EFEEFE !important;
+    padding: 0.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 0 1.5rem;
+    cursor: pointer;
+  }
+  
+  #right-menu-container{
+    width: 150px;
+  }
+#profile-image-header{
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 17px;
+  border: 3px solid #6558f600;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+#profile-image-header:hover {
+  border: 3px solid #5865F3;
+}
+.profile-image-header-selected{
+  border: 3px solid #1A1B1F !important;
+}
+
+
+.top-triangle{
+  display: none;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  margin-top: 3px;
+  margin-left: 15px;
+  background-color: #5865F3;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+#home-btn-menu{display: none;}
+.dropdown-content {
+  margin: 10px 0 0 -140px;
+  display: none;
+  position: absolute;
+  background-color: #414247;
+  min-width: 200px;
+  overflow: auto;
+  box-shadow: 0px 4px 16px 0px #00000025;
+  z-index: 1;
+  border-radius: 10px;
+  border: 1px solid #83838D;
+}
+.dropdown-content a {
+  font-weight: normal !important;
+  font-size: 14px !important;
+  color: #EFEEFE;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-left:0px solid #494981;
+  transition-duration: 0.4s;
+}
+#logout-dropdown{border-top: 1px solid #83838D;}
+.dropdown a:hover {background-color: #323338; border-left:10px solid #5865F3;}
+.show {display: block;}
+
+.dropdown-icon{
+  fill: #EFEEFE !important;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-block;
+}
+.dropdown-text{
+  font-weight: normal;
+  display: inline-block;
+  margin: 0 0 0 10px;
+  position: absolute;
+}
+#right-menu-signin{
+  color: #EFEEFE;
+  width: 100%;
+}
+#right-menu-signin a{
+  font-weight: normal;
+  text-decoration: none;
+  color: #EFEEFE;
+  padding: 0 8px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+#right-menu-signin a:hover{
+  color: #969EF1;
+}
+
+  .menu-right-icons {
+    fill: #EFEEFE !important;
+    transition-duration: 0.4s;
+    padding: 0.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0 1.5rem;
+    cursor: pointer;
+
+    border-radius: 15px;
+  }
+
+  .menu-right-icons:hover,
+  .menu-right-icons:active {
+    opacity: 1;
+    background: linear-gradient(to right bottom, #8980ff, #8279ff, #7c71ff, #756aff, #6e62ff,
+     #695dfb, #6458f6, #5f53f2, #5b4fe8, #574bde, #5348d5, #4f44cb);
+    box-shadow: 0px 3px 20px #6658ff4d;
+  }
+
+
+  .site-footer {
+    background-color: #2C2D31;
+    color: #F2F3F5;
+    padding: 40px 0 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 975px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #B6B9C0;
+    text-decoration: none;
+    line-height: 2;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #16DB93;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid #333; 
+  padding: 20px 5% 0 5%;
+}
+
+.footer-logo a img {
+  height: 50px; /* Adjust based on your logo's design */
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Right aligns the copyright text and gives it a slightly smaller, subtle appearance */
+.copyright {
+  color: #bbb;
+  font-size: 14px;
+}
+
+
+
+
+
+  /* Tablet styles */
+@media (max-width: 768px) {
+
+  #main-navigation {  padding: 0 2%;}
+  #dalaran-logo {   width: 70px;}
+  /*
+  #main-navigation nav {  width: 50%;}
+  .nav-icon { margin: 0 15%;}
+  #right-menu-container { font-size: 14px;}
+  .right-menu-login-icon{ width: 80px !important;}
+  .dropdown-content { margin: 10px 0 0 -150px;}
+  .menu-btn-bg {  transform: translate(12px, -39px);}
+  .btn-hover {  transform: translate(24px, 10px);}
+  .nav-btn-a:hover .btn-hover { transform: translate(24px, 0px);}
+
+*/
+
+#main-navigation nav {
+  gap: 20px;
+}
+.nav-btn-a {
+  font-size: 15px;
+}
+#right-menu-container {
+  font-size: 14px;
+  width: auto;
+}
+
+  .footer-column {
+      margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 10px; /* Adds space between the logo and the text on small screens */
+  }
+}
+@media (max-width: 630px) {
+  .container-footer { 
+    flex-direction: column;
+  }
+}
+
+/* ------------------- Mobile Styles ------------------- */
+@media (max-width: 480px) {
+  /* Hide desktop nav */
+  #main-navigation nav {
+    display: none;
+  }
+
+  /* Mobile header layout */
+  #main-navigation {
+    display: grid;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  /* Hamburger menu */
+  #mobile-menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    grid-column: 1;
+  }
+
+  #mobile-menu-icon .line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 4px 0;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+
+  /* Logo */
+  #dalaran-logo {
+    margin: 0 auto;
+    width: 120px;
+    grid-column: 2;
+  }
+
+  /* Profile menu */
+  #right-menu-container {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  /* Mobile dropdown menu */
+  #mobile-menu-dropdown {
+    display: none;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    border-top: 1px solid #333;
+    z-index: 12;
+  }
+
+  #mobile-menu-dropdown.show {
+    display: block;
+  }
+
+  #mobile-menu-dropdown nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mobile-menu-dropdown .mobile-nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    border-bottom: 1px solid #333;
+    text-align: left;
+  }
+}
